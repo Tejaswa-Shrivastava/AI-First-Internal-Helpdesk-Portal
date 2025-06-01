@@ -134,7 +134,7 @@ The application will be available at `http://localhost:5000`
 
 | Role | Email | Password | Department |
 |------|-------|----------|------------|
-| IT Staff | alice@company.com | it123 | IT |
+| IT Staff | alice@company.com | password123 | IT |
 | HR Staff | bob@company.com | hr123 | HR |
 | Finance Staff | diana@company.com | finance123 | Finance |
 | Facilities Staff | eve@company.com | facilities123 | Facilities |
