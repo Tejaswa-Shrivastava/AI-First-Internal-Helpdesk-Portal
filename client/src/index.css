@@ -1,0 +1,304 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 98%; /* #FAFBFC */
+  --foreground: 220 13% 9%; /* #1A1D29 */
+  --muted: 240 5% 96%; /* #F1F3F4 */
+  --muted-foreground: 220 9% 46%; /* #64748B */
+  --popover: 0 0% 100%; /* #FFFFFF */
+  --popover-foreground: 220 13% 9%; /* #1A1D29 */
+  --card: 0 0% 100%; /* #FFFFFF */
+  --card-foreground: 220 13% 9%; /* #1A1D29 */
+  --border: 240 6% 90%; /* #E2E8F0 */
+  --input: 240 6% 90%; /* #E2E8F0 */
+  --primary: 262 83% 58%; /* #8B5CF6 */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  --secondary: 240 5% 96%; /* #F1F3F4 */
+  --secondary-foreground: 220 13% 9%; /* #1A1D29 */
+  --accent: 217 91% 60%; /* #3B82F6 */
+  --accent-foreground: 0 0% 100%; /* #FFFFFF */
+  --destructive: 0 84% 60%; /* #EF4444 */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  --ring: 262 83% 58%; /* #8B5CF6 */
+  --radius: 0.75rem;
+  
+  /* Sidebar colors */
+  --sidebar-background: 262 83% 58%; /* #8B5CF6 */
+  --sidebar-foreground: 0 0% 100%; /* #FFFFFF */
+  --sidebar-primary: 0 0% 100%; /* #FFFFFF */
+  --sidebar-primary-foreground: 262 83% 58%; /* #8B5CF6 */
+  --sidebar-accent: 262 83% 65%; /* #A78BFA */
+  --sidebar-accent-foreground: 0 0% 100%; /* #FFFFFF */
+  --sidebar-border: 262 83% 65%; /* #A78BFA */
+  --sidebar-ring: 0 0% 100%; /* #FFFFFF */
+  
+  /* Chart colors */
+  --chart-1: 217 91% 60%; /* #3B82F6 */
+  --chart-2: 142 76% 36%; /* #10B981 */
+  --chart-3: 45 93% 47%; /* #F59E0B */
+  --chart-4: 262 83% 58%; /* #8B5CF6 */
+  --chart-5: 0 84% 60%; /* #EF4444 */
+}
+
+.dark {
+  --background: 210 11% 4%; /* #0F172A */
+  --foreground: 0 0% 98%; /* #F8FAFC */
+  --muted: 210 11% 11%; /* #1E293B */
+  --muted-foreground: 210 6% 54%; /* #64748B */
+  --popover: 210 11% 4%; /* #0F172A */
+  --popover-foreground: 0 0% 98%; /* #F8FAFC */
+  --card: 210 11% 4%; /* #0F172A */
+  --card-foreground: 0 0% 98%; /* #F8FAFC */
+  --border: 210 11% 15%; /* #334155 */
+  --input: 210 11% 15%; /* #334155 */
+  --primary: 217 91% 60%; /* #3B82F6 */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  --secondary: 210 11% 11%; /* #1E293B */
+  --secondary-foreground: 0 0% 98%; /* #F8FAFC */
+  --accent: 210 11% 11%; /* #1E293B */
+  --accent-foreground: 0 0% 98%; /* #F8FAFC */
+  --destructive: 0 84% 60%; /* #EF4444 */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  --ring: 217 91% 60%; /* #3B82F6 */
+  
+  /* Sidebar colors dark */
+  --sidebar-background: 220 13% 9%; /* #1A1D29 */
+  --sidebar-foreground: 0 0% 100%; /* #FFFFFF */
+  --sidebar-primary: 0 0% 100%; /* #FFFFFF */
+  --sidebar-primary-foreground: 220 13% 9%; /* #1A1D29 */
+  --sidebar-accent: 220 13% 15%; /* #2A2F3A */
+  --sidebar-accent-foreground: 0 0% 100%; /* #FFFFFF */
+  --sidebar-border: 220 13% 15%; /* #2A2F3A */
+  --sidebar-ring: 0 0% 100%; /* #FFFFFF */
+  
+  /* Chart colors dark */
+  --chart-1: 217 91% 60%; /* #3B82F6 */
+  --chart-2: 142 76% 36%; /* #10B981 */
+  --chart-3: 45 93% 47%; /* #F59E0B */
+  --chart-4: 262 83% 58%; /* #8B5CF6 */
+  --chart-5: 0 84% 60%; /* #EF4444 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom styles for the helpdesk portal */
+.helpdesk-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.purple-gradient {
+  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #C084FC 100%);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Status badge styles */
+.status-open {
+  @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200;
+}
+
+.status-in-progress {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+}
+
+.status-resolved {
+  @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+}
+
+.status-closed {
+  @apply bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200;
+}
+
+/* Department colors */
+.dept-it {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+}
+
+.dept-hr {
+  @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+}
+
+.dept-admin {
+  @apply bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200;
+}
+
+/* Priority indicators */
+.priority-low {
+  @apply border-l-4 border-green-400;
+}
+
+.priority-medium {
+  @apply border-l-4 border-yellow-400;
+}
+
+.priority-high {
+  @apply border-l-4 border-orange-400;
+}
+
+.priority-urgent {
+  @apply border-l-4 border-red-400;
+}
+
+/* Animation for loading states */
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Chat message animations */
+.chat-message-enter {
+  animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typing indicator animation */
+.typing-indicator {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.typing-indicator div {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: hsl(var(--muted-foreground) / 0.6);
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator div:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-indicator div:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* File upload area */
+.file-upload-area {
+  transition: all 0.2s ease-in-out;
+}
+
+.file-upload-area:hover {
+  border-color: hsl(var(--primary) / 0.5);
+  background-color: hsl(var(--primary) / 0.02);
+}
+
+/* Pattern detection alerts */
+.pattern-alert-high {
+  @apply bg-red-50 border-red-200 dark:bg-red-950 dark:border-red-800;
+}
+
+.pattern-alert-medium {
+  @apply bg-yellow-50 border-yellow-200 dark:bg-yellow-950 dark:border-yellow-800;
+}
+
+.pattern-alert-low {
+  @apply bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transform: translateY(-1px);
+}
+
+/* Focus improvements for accessibility */
+.focus-visible:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Success/error states */
+.success-state {
+  @apply text-green-700 bg-green-50 border-green-200 dark:text-green-400 dark:bg-green-950 dark:border-green-800;
+}
+
+.error-state {
+  @apply text-red-700 bg-red-50 border-red-200 dark:text-red-400 dark:bg-red-950 dark:border-red-800;
+}
+
+.warning-state {
+  @apply text-yellow-700 bg-yellow-50 border-yellow-200 dark:text-yellow-400 dark:bg-yellow-950 dark:border-yellow-800;
+}
+
+.info-state {
+  @apply text-blue-700 bg-blue-50 border-blue-200 dark:text-blue-400 dark:bg-blue-950 dark:border-blue-800;
+}
